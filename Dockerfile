@@ -12,10 +12,10 @@ ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
 
 # ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt upgrade -y && \
+RUN apt-get update && apt upgrade -y && \
     mkdir -p /usr/share/man/man1 && \
-    apt install -y \
-        libsdl2-2.0-0:i386 \
+    apt-get install -y \
+        libsdl2-2.0-0 \
         default-jre 
 
 COPY entrypoint.sh ${HOMEDIR}/entrypoint.sh
